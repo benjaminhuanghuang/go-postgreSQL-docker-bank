@@ -19,7 +19,6 @@ Slow
 
 
 ## SqlC
-Generage code based on sql
 ```
   brew install kyleconroy/sqlc/sqlc
   sqlc version
