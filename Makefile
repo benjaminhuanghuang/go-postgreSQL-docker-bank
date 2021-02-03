@@ -16,5 +16,8 @@ migratedown:
 sqlc:
 	sqlc generate
 
+test:
+	# run multiple package under current folder
+	go test -v -cover ./...
 
 	
