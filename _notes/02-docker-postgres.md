@@ -6,6 +6,8 @@ Install Dockeer Desktop
   # List all running containers
   docker ps       
 
+  docker ps -a
+
 
   # List all images
   docker images        
@@ -29,9 +31,17 @@ Run PostgreSQL container
 
   docker exec -it postgres12 psql -U root
 
+  docker exec -it postgres12 /bin/sh
 
   ## View logs 
   docker logs <continer_name/id>
+
+
+  # Stop container
+  docker stop <container_name/id>
+
+  # Start a stopped containeer
+  docker start <container_name/id>
 ```
 
 PostgreSQL command
@@ -40,6 +50,16 @@ PostgreSQL command
 
   # exit 
   \q
+
+
+  docker exec -it postgres12 /bin/sh
+
+  createdb --username=root --owner=root simple_bank
+
+  psql simple_bank
+
+  dropdb simple_bank
+  exit
 ```
 
 GUI db client: TablePlus
