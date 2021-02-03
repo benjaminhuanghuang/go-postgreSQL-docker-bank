@@ -1,33 +1,4 @@
-# Generate CRUD Golang code from SQL | Compare db/sql, gorm, sqlx & sqlc
-
-## Database / SQL
-```
-  import (
-
-  )
-
-
-  db.QueryRowContext(ctx, "SELECT *").Scan(&usename, &created)
-```
-
-## gorm
-Slow
-
-
-## SqlX
+# Write Golang unit tests for database CRUD with random data
 
 
 
-## SqlC
-```
-  brew install kyleconroy/sqlc/sqlc
-  sqlc version
-
-  sqlc init
-```
-modify sqlc.yaml
-
-run 
-```
-  sqlc generate
-```
