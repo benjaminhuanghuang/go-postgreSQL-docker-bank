@@ -20,4 +20,6 @@ test:
 	# run multiple package under current folder
 	go test -v -cover ./...
 
+server:
+	go run main.go
 	
