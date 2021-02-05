@@ -1,6 +1,9 @@
 # Add users table with unique & foreign key constraints in PostgreSQL
 
-Add user table, one user can have multiple account
+> Add user table and create migration
+
+
+User table schema, one user can have multiple account
 ```
 Table users as U {
   username varchar [pk]

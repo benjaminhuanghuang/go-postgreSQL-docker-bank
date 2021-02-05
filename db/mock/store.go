@@ -7,8 +7,8 @@ package mockdb
 import (
 	context "context"
 	gomock "github.com/golang/mock/gomock"
+	db "github.com/techschool/simplebank/db/sqlc"
 	reflect "reflect"
-	db "simplebank/db/sqlc"
 )
 
 // MockStore is a mock of Store interface
@@ -184,19 +184,19 @@ func (mr *MockStoreMockRecorder) GetTransfer(arg0, arg1 interface{}) *gomock.Cal
 }
 
 // GetUser mocks base method
-// func (m *MockStore) GetUser(arg0 context.Context, arg1 string) (db.User, error) {
-// 	m.ctrl.T.Helper()
-// 	ret := m.ctrl.Call(m, "GetUser", arg0, arg1)
-// 	ret0, _ := ret[0].(db.User)
-// 	ret1, _ := ret[1].(error)
-// 	return ret0, ret1
-// }
+func (m *MockStore) GetUser(arg0 context.Context, arg1 string) (db.User, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "GetUser", arg0, arg1)
+	ret0, _ := ret[0].(db.User)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
 
 // GetUser indicates an expected call of GetUser
-// func (mr *MockStoreMockRecorder) GetUser(arg0, arg1 interface{}) *gomock.Call {
-// 	mr.mock.ctrl.T.Helper()
-// 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUser", reflect.TypeOf((*MockStore)(nil).GetUser), arg0, arg1)
-// }
+func (mr *MockStoreMockRecorder) GetUser(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetUser", reflect.TypeOf((*MockStore)(nil).GetUser), arg0, arg1)
+}
 
 // ListAccounts mocks base method
 func (m *MockStore) ListAccounts(arg0 context.Context, arg1 db.ListAccountsParams) ([]db.Account, error) {

@@ -3,28 +3,8 @@
 package db
 
 import (
-	"fmt"
 	"time"
 )
-
-type Currency string
-
-const (
-	CurrencyUSD Currency = "USD"
-	CurrencyEUR Currency = "EUR"
-)
-
-func (e *Currency) Scan(src interface{}) error {
-	switch s := src.(type) {
-	case []byte:
-		*e = Currency(s)
-	case string:
-		*e = Currency(s)
-	default:
-		return fmt.Errorf("unsupported scan type for Currency: %T", src)
-	}
-	return nil
-}
 
 type Account struct {
 	ID        int64     `json:"id"`
@@ -49,4 +29,13 @@ type Transfer struct {
 	// must be +
 	Amount    int64     `json:"amount"`
 	CreatedAt time.Time `json:"created_at"`
+}
+
+type User struct {
+	Username          string    `json:"username"`
+	HashedPassword    string    `json:"hashed_password"`
+	FullName          string    `json:"full_name"`
+	Email             string    `json:"email"`
+	PasswordChangedAt time.Time `json:"password_changed_at"`
+	CreatedAt         time.Time `json:"created_at"`
 }

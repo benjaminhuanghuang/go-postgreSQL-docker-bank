@@ -30,4 +30,4 @@ server:
 	go run main.go
 	
 mock:
-	mockgen simplebank/db/sqlc Store -package mockdb -destination db/mock/store.gocc
+	mockgen simplebank/db/sqlc Store -package mockdb -destination db/mock/store.go

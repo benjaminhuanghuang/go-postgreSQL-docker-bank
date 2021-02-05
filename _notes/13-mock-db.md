@@ -17,7 +17,7 @@ How to mock
   go get github.com/golang/mock/mockgen@v1.4.4
 ```
 
-generate mocks
+generate mocks 
 ```
   mockgen simplebank/db/sqlc Store -destination db/mock/store.go
 ```
