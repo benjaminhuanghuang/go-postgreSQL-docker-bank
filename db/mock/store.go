@@ -7,8 +7,8 @@ package mockdb
 import (
 	context "context"
 	gomock "github.com/golang/mock/gomock"
-	db "github.com/techschool/simplebank/db/sqlc"
 	reflect "reflect"
+	db "simplebank/db/sqlc"
 )
 
 // MockStore is a mock of Store interface

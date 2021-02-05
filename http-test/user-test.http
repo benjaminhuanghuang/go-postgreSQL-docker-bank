@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
   "username":"ben",
-  "hashed_password":"dddd",
+  "password":"ddddddddd",
   "full_name":"fullname",
   "email":"aaa@gmail.com"
 }
