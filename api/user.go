@@ -59,7 +59,7 @@ func (server *Server) createUser(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
 		return
 	}
-
+	// use the createUserResponse instead of user. remvoe password or other security information from user
 	rsp := createUserResponse{
 		Username:          user.Username,
 		FullName:          user.FullName,
