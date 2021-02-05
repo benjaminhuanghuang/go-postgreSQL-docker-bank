@@ -30,13 +30,17 @@ Create a migration file
   migrate create -ext sql -dir db/migration -seq add_users
 ```
 
-Copy sql for user table into thee migration file
+Copy sql for user table into thee migration up file
+
+Write sql in migration down file to drop the restriction and user table
 ```
 ```
 
 Apply the new migration
 ```
   make migratedown    # clean the data in accounts table
-  
+
   make migrateup
 ```
+
+Add make option to migrate up1 and down1
