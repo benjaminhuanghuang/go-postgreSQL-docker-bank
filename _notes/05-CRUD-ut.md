@@ -1,17 +1,35 @@
 # Write Golang unit tests for database CRUD with random data
 
-main_test.go
+1. For database related UT, we need to setup the db connection in main_test.go
 
 TestMain() funciton is the main entry point of all unit tests inside one golang package
 
 Need import postgres driver
 ```
-  github.com/lib/pq 
+  _  github.com/lib/pq 
+```
+_ tell go formatter don't delete this import
+
+
+2. DB configration can be loaded from config file
+```
+const {
+  dbDriver = "postgres"
+  dbSource = "postgresql://root:root1234@localhost:5432/simple_bank?sslmode=disable"
+}
+
+// Load from config
+testDB, err = sql.Open(config.DBDriver, config.DBSource)
 ```
 
 
-
+## Test for single file/module
 ```
+  func TestCreateAccount(t *testing.T) {
+    //createRandomAccount(t)
+  }
+
+
   func createRandomAccount(t *testing.T) Account {
     arg := CreateAccountParams{
       Owner:    "ben",
@@ -30,9 +48,5 @@ Need import postgres driver
     require.NotZero(t, account.ID)
     require.NotZero(t, account.CreatedAt)
     return account
-  }
-
-  func TestCreateAccount(t *testing.T) {
-    //createRandomAccount(t)
   }
 ```

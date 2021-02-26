@@ -10,6 +10,7 @@ import (
 	_ "github.com/lib/pq"
 )
 
+// queries object contains a dbtx, which can be a db connection or a transation
 var testQueries *Queries
 var testDB *sql.DB
 
