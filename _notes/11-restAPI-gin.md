@@ -2,6 +2,7 @@
 
 https://www.youtube.com/watch?v=n_Y_YisgqTw&list=PLy_6D98if3ULEtXtNSY_2qN21VCKgoQAE&index=11&ab_channel=TECHSCHOOL
 
+![](./_images/go-web-framework.png)
 ```
   go get -u github.com/gin-gonic/gin
 ```
