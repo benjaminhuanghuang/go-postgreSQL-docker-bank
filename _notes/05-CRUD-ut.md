@@ -50,3 +50,16 @@ testDB, err = sql.Open(config.DBDriver, config.DBSource)
     return account
   }
 ```
+
+## Generate random data for testing.
+```
+  util/random.go
+
+  // will be called automatically when the package is first used
+    func init() {
+    rand.Seed(time.Now().UnixNano())
+  }
+```
+
+## Create random account for each test.
+
